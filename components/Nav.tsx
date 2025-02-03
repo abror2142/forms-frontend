@@ -1,17 +1,48 @@
-import { Flowbite } from "flowbite-react";
-import { Navbar, DarkThemeToggle } from "flowbite-react";
+"use client";
+import { Avatar, DarkThemeToggle, Dropdown, Navbar } from "flowbite-react";
 
 const Nav = () => {
     return (
-        <nav className="flex justify-between items-center px-4 py-2 bg-gray-50 dark:bg-gray-800 dark:text-gray-300">
-            <div className="px-6 py-2 bg-gray-200 text-gray-600 rounded-md dark:bg-gray-900">LOGO</div>
-            <div>Menu</div>
-            <div className="flex gap-4 items-center">
-                <DarkThemeToggle />
-                <div>Sign In</div>
+        <Navbar fluid rounded className="">
+            <div className="px-6 py-2 bg-gray-200 text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+                LOGO
             </div>
-        </nav>  
-    )
+
+            <div className="flex md:order-2">
+                <div>
+                    <DarkThemeToggle />
+                </div>
+                <Dropdown
+                arrowIcon={false}
+                inline
+                label={
+                    <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
+                }
+                >
+                <Dropdown.Header>
+                    <span className="block text-sm">Bonnie Green</span>
+                    <span className="block truncate text-sm font-medium">name@flowbite.com</span>
+                </Dropdown.Header>
+                <Dropdown.Item>Dashboard</Dropdown.Item>
+                <Dropdown.Item>Settings</Dropdown.Item>
+                <Dropdown.Item>Earnings</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Item>Sign out</Dropdown.Item>
+                </Dropdown>
+                <Navbar.Toggle />
+            </div>
+            
+            <Navbar.Collapse>
+                <Navbar.Link href="#" active>
+                Home
+                </Navbar.Link>
+                <Navbar.Link href="#">About</Navbar.Link>
+                <Navbar.Link href="#">Services</Navbar.Link>
+                <Navbar.Link href="#">Pricing</Navbar.Link>
+                <Navbar.Link href="#">Contact</Navbar.Link>
+            </Navbar.Collapse>
+        </Navbar>
+  );
 }
 
 export default Nav

@@ -4,6 +4,7 @@ import { ThemeModeScript } from "flowbite-react";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 import Nav from "@/components/Nav";
+import { FooterComponent } from "@/components/FooterComponent";
 
 export const metadata: Metadata = {
   title: "Create Flowbite React",
@@ -28,7 +29,7 @@ export default function RootLayout({
           {children}
         </main>
         <footer>
-          Footer
+          <FooterComponent />
         </footer>
       </body>
     </html>

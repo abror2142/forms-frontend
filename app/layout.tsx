@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { ThemeModeScript, DarkThemeToggle } from "flowbite-react";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
+import Nav from "@/components/Nav";
 
 export const metadata: Metadata = {
   title: "Create Flowbite React",
@@ -21,8 +22,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className + " h-screen flex flex-col justify-between dark:bg-gray-700 dark:text-white"}>
         <header>
-          Navbar
-          <DarkThemeToggle />
+          <Nav />
         </header>
         <main>
           {children}
